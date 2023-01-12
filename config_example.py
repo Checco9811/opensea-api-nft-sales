@@ -1,0 +1,1 @@
+OPENSEA_APIKEY = ''
