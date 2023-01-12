@@ -1,6 +1,7 @@
 # opensea-api-nft-sales
 Python script to retrieve nft trasactions event from OpenSea API.
 To start making requests you will need the OpenSea API Key, which can be obtained from here https://docs.opensea.io/reference/request-an-api-key
+Copy `config.example.py` to `config.py` and fill the empty string with your API key.
 
 Command execution example:
 ``` 
