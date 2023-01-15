@@ -13,7 +13,6 @@ if (config.OPENSEA_APIKEY == ''):
     sys.exit('OPENSEA_APIKEY is empty in config.py')
 
 def get_events(start_date, end_date, cursor='', event_type='successful', **kwargs):
-
     url = "https://api.opensea.io/api/v1/events"
     query = {"only_opensea": "false", 
              "occurred_before": end_date,
