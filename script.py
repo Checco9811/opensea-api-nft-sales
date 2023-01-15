@@ -1,10 +1,16 @@
-import requests
 import argparse
-from datetime import datetime, timezone
 import csv
+from datetime import datetime, timezone
+import requests
+import sys
 from time import sleep
+try:
+    import config
+except:
+    sys.exit('Unable to find ./config.py. Please see the instruction in README.md')
 
-OPENSEA_APIKEY = "YOUR_API_KEY"
+if (config.OPENSEA_APIKEY == ''):
+    sys.exit('OPENSEA_APIKEY is empty in config.py')
 
 def get_events(start_date, end_date, cursor='', event_type='successful', **kwargs):
     url = "https://api.opensea.io/api/v1/events"
@@ -18,7 +24,7 @@ def get_events(start_date, end_date, cursor='', event_type='successful', **kwarg
 
     headers = {
         "Accept": "application/json",
-        "X-API-KEY": OPENSEA_APIKEY
+        "X-API-KEY": config.OPENSEA_APIKEY
     }
     response = requests.request("GET", url, headers=headers, params=query)
 
